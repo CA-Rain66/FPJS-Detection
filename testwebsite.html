@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description" content="Webpage description goes here" />
+  <meta charset="utf-8">
+  <title>Change_me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+  
+<div class="container">
+  
+</div>
+
+  <script>
+    const fpPromise = import('https://fpjscdn.net/v3/UE53kwtFPYOLb4OHA2qa')
+      .then(FingerprintJS => FingerprintJS.load({apiKey: "UE53kwtFPYOLb4OHA2qa"}))
+    fpPromise
+      .then(fp => fp.get())
+      .then(result => console.log(result.requestId, result.visitorId))
+
+  </script>
+
+</body>
+</html>
