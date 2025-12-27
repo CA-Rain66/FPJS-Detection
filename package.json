@@ -1,0 +1,66 @@
+{
+  "name": "optmeowt",
+  "version": "5.1.2",
+  "description": "A privacy extension that allows users to exercise rights under GPC",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "prestart": "rimraf dev",
+    "start": "concurrently -k npm:start:firefox  npm:start:chrome",
+    "start:firefox": "webpack --watch --mode development --env firefox",
+    "start:chrome": "webpack --watch --mode development --env chrome",
+    "prebuild": "rimraf dist && mkdir dist && mkdir dist/packages",
+    "build": "npm run build:firefox && npm run build:chrome",
+    "build:firefox": "webpack --mode production --env firefox",
+    "build:chrome": "webpack --mode production --env chrome",
+    "postbuild:firefox": "cd dist/firefox && zip -rFSX ../packages/ff-optmeowt-$npm_package_version.zip * -x '*.git*' -x '*.DS_Store*' -x '*.txt*'",
+    "postbuild:chrome": "cd dist/chrome && zip -rFSX ../packages/chrome-optmeowt-$npm_package_version.zip * -x '*.git*' -x '*.DS_Store*' -x '*.txt*'",
+    "test": "mocha $(find test -name '*.js')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/privacy-tech-lab/gpc-optmeowt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/privacy-tech-lab/gpc-optmeowt/issues"
+  },
+  "homepage": "https://github.com/privacy-tech-lab/gpc-optmeowt#readme",
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "darkmode-js": "^1.5.7",
+    "file-saver": "^2.0.5",
+    "idb": "^7.1.1",
+    "mocha": "^10.8.2",
+    "mustache": "^4.2.0",
+    "path": "^0.12.7",
+    "psl": "^1.8.0",
+    "puppeteer": "^22.15.0",
+    "rimraf": "^3.0.2",
+    "tippy.js": "^6.3.7",
+    "uikit": "3.6.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "concurrently": "^6.2.1",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^5.2.7",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "prettier": "^2.3.2",
+    "string-replace-loader": "^3.0.3",
+    "style-loader": "^2.0.0",
+    "wait-on": "^7.2.0",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^5.2.1",
+    "workbox-webpack-plugin": "^7.3.0"
+},
+"resolutions": {
+  "ws": "^8.17.1"
+}
+}
