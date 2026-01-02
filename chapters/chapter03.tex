@@ -1,11 +1,55 @@
 %!TEX root = ../main.tex
 \chapter{Introduction}
 
-The average user's rights and freedoms in the online world have taken a beneficial turn with the introduction of privacy regulations across continents. With the adoption of General Data Protection Regulation (GDPR) in 2016 and its becoming effective two years later, were the first major step in years that granted the users to have control and a say over their information online \cite{gdprhistory}. The California Consumer Privacy Act (CCPA) followed not long after in 2018. 
+% TL: As I already wrote on Slack, you have to use more citations. 
+% Anything that is not common knowledge within the Computer Science field or invented by you HAS to come with a citation.
+% For example, you do not need to describe what a website is with citations, but you must describe what fingerprinting is with citations.
 
-In contrast to the GDPR's enforcement of \emph{opt-in} mechanisms, the CCPA grants the users the right to \emph{opt-out} of selling and distributing of their personal information to the third parties by businesses which means the consent to not sell or share is asked after a certain amount of information is already collected. The California-based websites that meet the criteria for being categorized as a business are obligated to provide the means to exercise opt-out rights to their visitors \cite[§1798.120 (a)–(b)]{ccpa}. To tackle this, the act requires the business to set up and "provide a clear and conspicuous link on [its]
-Internet homepage, titled ‘Do Not Sell My Personal Information’" detailing the user's rights and showing them how to opt out \cite[§1798.135 (a)]{ccpa}. Moreover, the websites must acknowledge and respect the preference signals coming from users' browsers. In the past however these signals lacked a standard. After the group responsible for developing the "do not track" HTTP header was disbanded and the method became obsolete \cite{iapp}, the need for a new universal standard emerged and this paved the way for Global Privacy Control (GPC) to take the reins.
+% TL: Please put each sentence into one line.
+% Signifanctly improves readability and allows me to add comments more clearly
+% A linebreak in .tex does not create a linebreak in .pdf, only two linebreaks cause a linebreak in the resulting doc
 
+% TL: The main goal of your introduction is to be catchy.
+% The first few sentences should indicate that a huge problem exists, with no coinciding solution.
+% Point out -> Why does this problem exists? Why are no (efficient) countermeasures?
+% What am I implementing to approach solving the issue?
+
+% TL: But have they? California and the EU are two examples, not the global average.
+% "across continents" implies worldwide privacy regulations... sadly that is not the case.
+% Fingerprinting and obfuscation of it using e.g. WebAssembly is introducing new risks.
+% Also, freedoms sounds a bit weird. Plainly speaking, the internet for eu citizens is as free as before, we are just getting cookie banners.
+The average user's rights and freedoms in the online world have taken a beneficial turn with the introduction of privacy regulations across continents.
+% TL: Wording and language unprecise. What does "major" mean -> provide at least one example.
+% Major somewhat implies that there were minor steps, but what steps were taken before? 
+% "Information", "in years", "a say" is ambiguous, please use precise wording.
+% References would be very helpful in driving home your point and validating your wording.
+With the adoption of General Data Protection Regulation (GDPR) in 2016 and its becoming effective two years later, were the first major step in years that granted the users to have control and a say over their information online \cite{gdprhistory}. 
+% TL: Scratch "not long after" -> Rather insert if CCPA builds upon GDPR or is completely separate.
+The California Consumer Privacy Act (CCPA) followed not long after in 2018. 
+
+% TL: What does opt-in or opt-out mean. Explanation after opt-out is good, but I would recommend putting it before mentioning opt-in.
+% You should break the sentence up into at least two sentences.
+% Sentence may also be understood incorrectly, as a "third party" may be hired by a business (the first party) hosting the website.
+% In this case, the third party is both providing the ads and cookies, and collecting user data on their servers.
+% The business might not actively sell user data to a third party.
+In contrast to the GDPR's enforcement of \emph{opt-in} mechanisms, the CCPA grants the users the right to \emph{opt-out} of selling and distributing of their personal information to the third parties by businesses which means the consent to not sell or share is asked after a certain amount of information is already collected. 
+% TL: Wording is a bit too much, please make the sentene more concise and to the point.
+The California-based websites that meet the criteria for being categorized as a business are obligated to provide the means to exercise opt-out rights to their visitors \cite[§1798.120 (a)–(b)]{ccpa}.
+% TL: Good literature work! 
+To tackle this, the act requires the business to set up and "provide a clear and conspicuous link on [its] Internet homepage, titled ‘Do Not Sell My Personal Information’" detailing the user's rights and showing them how to opt out \cite[§1798.135 (a)]{ccpa}. 
+% TL: What preference signals? Add a sentence describing what those are and how they are generated.
+Moreover, the websites must acknowledge and respect the preference signals coming from users' browsers.
+% TL: What does this mean? Where the signals just random noise? Just a bool?
+% Also: References, References, References 
+In the past however these signals lacked a standard.
+% TL: What group? Why did the method become obsolete?
+% You describe the need for a "new universal standard" which implies that there was a standard, contradicting the sentence before.
+% Also, please check language.
+After the group responsible for developing the "do not track" HTTP header was disbanded and the method became obsolete \cite{iapp}, the need for a new universal standard emerged and this paved the way for Global Privacy Control (GPC) to take the reins.
+
+% TL: Please check language.
+% How does this work? What does the "request" do or look like?
+% What does "subject to it" mean? Any website visited by someone from a california IP address or any website originating from california?
 This system granted the users to report to the websites they visit the request to opt out from sharing or selling of their information under the CCPA and the websites that are subject to it are expected to honor it. 
 
 
