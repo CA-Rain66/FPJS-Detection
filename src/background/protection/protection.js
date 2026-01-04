@@ -20,7 +20,7 @@ import {
   deleteDynamicRule,
   reloadDynamicRules,
 } from "../../common/editRules.js";
-import { isWellknownCheckEnabled } from "../../common/settings.js";
+import {isFPJSCheckEnabled } from "../../common/settings.js";
 
 /******************************************************************************/
 /******************************************************************************/
@@ -446,6 +446,12 @@ async function onMessageHandlerAsync(message, sender, sendResponse) {
     sendResponse({ enabled });
     return true;
   }
+    if (message.msg === "FPJS_TO_BACKGROUND") {
+      await storage.set(stores.fpjsDetections, {
+        detected: true,
+        urls: [message.data],}, domain);
+      return true;
+    }
   if (message.msg === "TOGGLE_WELLKNOWN_CHECK") {
     const enabled = message.data?.enabled !== false;
     await storage.set(stores.settings, enabled, "WELLKNOWN_CHECK_ENABLED");
