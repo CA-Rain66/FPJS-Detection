@@ -26,6 +26,7 @@ const stores = Object.freeze({
   domainlist: "DOMAINLIST",
   thirdParties: "THIRDPARTIES",
   wellknownInformation: "WELLKNOWNDATA",
+  fpjsInformation: "FPJSDETECTION",
 });
 
 /******************************************************************************/
@@ -38,6 +39,7 @@ const dbPromise = openDB("extensionDB", 1, {
     db.createObjectStore(stores.settings);
     db.createObjectStore(stores.thirdParties);
     db.createObjectStore(stores.wellknownInformation);
+    db.createObjectStore(stores.fpjsInformation);
   },
 });
 
@@ -149,3 +151,4 @@ async function handleUpload() {
 /******************************************************************************/
 
 export { handleDownload, startUpload, handleUpload, stores, storage };
+
